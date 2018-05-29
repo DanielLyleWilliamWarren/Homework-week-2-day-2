@@ -6,10 +6,31 @@ class Bears
     @stomach = stomach
   end
 
-def how_many_fish()
-  return @stomach.length
+attr_accessor :stomach
+
+def make_noise
+  return "roar"
 end
 
+def how_many_fish()
+  return @stomach.count
+end
 
+def eat_up(fish)
+  return @stomach.push(fish)
+end
+
+# def fish_avaliable()
+#   return river.volume_of_fish
+# end
+
+
+# def eating_a_fish(river)
+#     edible_fish = river.volume_of_fish()
+#     for fish in edible_fish
+#       eat_up(fish)
+#     end
+#     river.lose_a_fish
+# end
 
 end

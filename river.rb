@@ -6,9 +6,15 @@ class River
   end
 
 attr_reader :river_name
+attr_accessor :volume_of_fish
 
 
 def volume_of_fish()
   return @volume_of_fish.count
 end
+
+def lose_a_fish()
+  @volume_of_fish.pop
+end
+
 end
