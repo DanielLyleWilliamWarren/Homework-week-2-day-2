@@ -13,7 +13,7 @@ def make_noise
 end
 
 def how_many_fish()
-  return @stomach.count
+  return @stomach.length
 end
 
 def eat_up(fish)
@@ -32,5 +32,7 @@ end
 #     end
 #     river.lose_a_fish
 # end
+
+# def
 
 end

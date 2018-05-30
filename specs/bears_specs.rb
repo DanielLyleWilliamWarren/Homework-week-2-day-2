@@ -9,7 +9,7 @@ class BearsTest < MiniTest::Test
   def setup
     @fish1 = Fish.new("John")
     @fish2 = Fish.new("Tony")
-    @fish3 = Fish.new("Zsolt")
+    fish = Fish.new("Zsolt")
     @river1 = River.new("Ganges",[@fish1,@fish2,@fish3])
     @Bear1 = Bears.new("Baloo","Sloth Bear",[])
   end
@@ -22,13 +22,21 @@ class BearsTest < MiniTest::Test
     @Bear1.eat_up(@fish2)
     assert_equal(1, @Bear1.how_many_fish())
   end
+  #
+  # def test_bear_eats_one_fish
+  #   @Bear1.eating_a_fish(@river1)
+  #   assert_equal(1, @Bear1.how_many_fish())
+  #   assert_equal(2, @river1.volume_of_fish)
+  # end
 
-  def test_pickup_from_stop
-    skip
-    @Bear1.eating_a_fish(@river1)
+  def test_bear_eats_one_fish
+    fish = Fish.new("Zsolt")
+    @Bear1.eat_up(fish)
+    @river1.lose_a_fish(fish)
     assert_equal(1, @Bear1.how_many_fish())
     assert_equal(2, @river1.volume_of_fish)
   end
+
 
   def test_make_bear_roar
     assert_equal("roar", @Bear1.make_noise)
